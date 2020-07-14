@@ -1,3 +1,5 @@
 {
-	"prefix": "."
+	"prefix": "->",
+	"description": "ChillBot is a Discord bot designed to chill and cure what's known as boredom during Quarantine.",
+	"color": [0, 2, 91]
 }

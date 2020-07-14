@@ -1,5 +1,6 @@
 import { Client, Message } from "discord.js";
 import config from "../config.json";
+import commands from "./loader";
 
 const readyEvent = (Bot: Client): number => {
 
@@ -14,6 +15,12 @@ const messageEvent = (Bot: Client, message: Message): number => {
 
 	if(!message.content.startsWith(config.prefix) || message.author.bot || message.member == null) return 1;
 
+	if(commands[args[0]]) {
+
+		if(commands[args[0]].properties.args.length == 0) commands[args[0]].run(message);
+		else commands[args[0]].run(message, args);
+
+	}
 
 	return 1;
 };
