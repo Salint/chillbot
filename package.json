@@ -2,11 +2,11 @@
 	"name": "chillbot",
 	"version": "1.0.0",
 	"description": "A Discord bot to chill",
-	"main": "./build/main.js",
+	"main": "./build/src/main.js",
 	"scripts": {
 		"lint": "npx eslint src --ext .ts",
 		"build": "tsc",
-		"start": "node ./build/main.js"
+		"start": "node ./build/src/main.js"
 	},
 	"author": "Salint",
 	"license": "MIT",

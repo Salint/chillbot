@@ -1,9 +1,9 @@
-import { Client } from "discord.js";
+import { Client, Message } from "discord.js";
+import events from "./events";
 
 const Bot: Client = new Client();
 
-Bot.on("ready", () => {
-	Bot.user.setActivity("you.", { type: "WATCHING" });
-});
+Bot.on("ready", () => events.readyEvent(Bot));
+Bot.on("message", (message: Message) => events.messageEvent(Bot, message));
 
 Bot.login(process.env.token);
