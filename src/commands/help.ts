@@ -17,7 +17,7 @@ const run = (message: Message): number => {
 	embed.setDescription(config.description);
 	
 	readdirSync(__dirname).forEach(command => {
-		embed.addField(commands[command.split(".")[0]].properties.name, commands[command.split(".")[0]].properties.description, true);
+		embed.addField(config.prefix + commands[command.split(".")[0]].properties.name, commands[command.split(".")[0]].properties.description, true);
 	});
 
 	message.channel.send(embed);
