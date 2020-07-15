@@ -3,8 +3,8 @@ import config from "../../config.json";
 import request from "request";
 
 const properties = {
-	name: "bacontext",
-	description: "Gibberish about bacon!",
+	name: "fact",
+	description: "Random useless fact.",
 	args: []
 };
 
@@ -12,10 +12,10 @@ const run = (message: Message): number => {
 
 	const embed: MessageEmbed = new MessageEmbed();
 	embed.setColor(config.color as ColorResolvable);
-	embed.setTitle("Bacon gibberish!");
+	embed.setTitle("Useless fact.");
 
 	request({
-		url: "https://baconipsum.com/api/?type=all-meat&paras=1&format=text",
+		url: "https://uselessfacts.jsph.pl/random.txt?language=en",
 		headers: {
 			"Accept": "text/plain",
 			"User-Agent": "request"
