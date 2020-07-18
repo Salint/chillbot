@@ -20,7 +20,7 @@ const run = (message: Message): number => {
 			"Accept": "text/plain",
 			"User-Agent": "request"
 		}
-	}, (error, response, body) => {
+	}, (_error, _response, body) => {
 		embed.setDescription(body);
 		message.channel.send(embed);
 	});
