@@ -1,6 +1,6 @@
 import { Message, MessageEmbed, ColorResolvable } from "discord.js";
 import config from "../../config.json";
-import request from "request";
+import axios from "axios";
 
 const properties = {
 	name: "dadjoke",
@@ -14,16 +14,17 @@ const run = (message: Message): number => {
 	embed.setColor(config.color as ColorResolvable);
 	embed.setTitle("Free dad joke.");
 
-	request({
+	axios({
+		method: "GET",
 		url: "https://icanhazdadjoke.com/",
 		headers: {
-			"Accept": "text/plain",
-			"User-Agent": "request"
+			Accept: "text/plain",
 		}
-	}, (_error, _response, body) => {
-		embed.setDescription(body);
+	}).then((response) => {
+		embed.setDescription(response.data);
 		message.channel.send(embed);
 	});
+	
 	return 1;
 };
 

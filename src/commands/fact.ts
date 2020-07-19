@@ -1,6 +1,6 @@
 import { Message, MessageEmbed, ColorResolvable } from "discord.js";
 import config from "../../config.json";
-import request from "request";
+import axios from "axios";
 
 const properties = {
 	name: "fact",
@@ -14,14 +14,14 @@ const run = (message: Message): number => {
 	embed.setColor(config.color as ColorResolvable);
 	embed.setTitle("Useless fact.");
 
-	request({
+	axios({
+		method: "GET",
 		url: "https://uselessfacts.jsph.pl/random.txt?language=en",
 		headers: {
 			"Accept": "text/plain",
-			"User-Agent": "request"
 		}
-	}, (_error, _response, body) => {
-		embed.setDescription(body);
+	}).then((response) => {
+		embed.setDescription(response.data);
 		message.channel.send(embed);
 	});
 	return 1;
