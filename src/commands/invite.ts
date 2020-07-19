@@ -3,7 +3,7 @@ import config from "../../config.json";
 
 const properties = {
 	name: "invite",
-	description: "An invite link to the bot..",
+	description: "An invite link to the bot.",
 	args: []
 };
 
