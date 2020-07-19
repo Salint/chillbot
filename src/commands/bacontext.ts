@@ -1,6 +1,6 @@
-/*import { Message, MessageEmbed, ColorResolvable } from "discord.js";
+import { Message, MessageEmbed, ColorResolvable } from "discord.js";
 import config from "../../config.json";
-import request from "request";
+import axios from "axios";
 
 const properties = {
 	name: "bacontext",
@@ -14,20 +14,20 @@ const run = (message: Message): number => {
 	embed.setColor(config.color as ColorResolvable);
 	embed.setTitle("Bacon gibberish!");
 
-	request({
+	axios({
+		method: "GET",
 		url: "https://baconipsum.com/api/?type=all-meat&paras=1&format=text",
 		headers: {
-			"Accept": "text/plain",
-			"User-Agent": "request"
+			"Accept": "text/plain"
 		}
-	}, (error, response, body) => {
-		embed.setDescription(body);
+	}).then((response) => {
+		embed.setDescription(response.data);
 		message.channel.send(embed);
 	});
 	return 1;
 };
-*/
-/* eslint-disable
+
+/* eslint-disable */
 exports.properties = properties;
 exports.run = run;
-eslint-enable */
+/* eslint-enable */
