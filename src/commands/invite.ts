@@ -1,5 +1,4 @@
-import { Message, MessageEmbed, ColorResolvable } from "discord.js";
-import config from "../../config.json";
+import { Message } from "discord.js";
 
 const properties = {
 	name: "invite",
