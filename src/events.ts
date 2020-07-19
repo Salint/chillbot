@@ -9,7 +9,7 @@ const readyEvent = (Bot: Client): number => {
 	return 1;
 };
 
-const messageEvent = (Bot: Client, message: Message): number => {
+const messageEvent = (message: Message): number => {
 
 	const args = message.content.substr(config.prefix.length).split(" ");
 
