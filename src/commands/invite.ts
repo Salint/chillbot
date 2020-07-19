@@ -1,4 +1,5 @@
 import { Message } from "discord.js";
+import config from "../../config.json";
 
 const properties = {
 	name: "invite",
@@ -8,7 +9,7 @@ const properties = {
 
 const run = (message: Message): number => {
 
-	message.channel.send("https://discord.com/api/oauth2/authorize?client_id=681197286201491504&permissions=8&scope=bot");
+	message.channel.send(config.invite);
 	return 1;
 };
 

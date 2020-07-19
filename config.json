@@ -1,5 +1,6 @@
 {
 	"prefix": ">",
 	"description": "ChillBot is a Discord bot designed to chill and cure what's known as boredom during Quarantine.",
-	"color": [0, 2, 91]
+	"color": [0, 2, 91],
+	"invite": "https://discord.com/api/oauth2/authorize?client_id=681197286201491504&permissions=8&scope=bot"
 }
