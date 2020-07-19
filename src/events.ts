@@ -4,7 +4,7 @@ import commands from "./loader";
 
 const readyEvent = (Bot: Client): number => {
 
-	Bot.user.setActivity("you.", { type: "WATCHING" });
+	Bot.user.setActivity(`in ${Bot.guilds.cache.array().length} guilds! >help.`, { type: "PLAYING" });
 
 	return 1;
 };
