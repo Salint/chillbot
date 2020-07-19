@@ -15,10 +15,10 @@ const messageEvent = (Bot: Client, message: Message): number => {
 
 	if(!message.content.startsWith(config.prefix) || message.author.bot || message.member == null) return 1;
 
-	if(commands[args[0]]) {
+	if(commands[args[0].toLowerCase()]) {
 
-		if(commands[args[0]].properties.args.length == 0) commands[args[0]].run(message);
-		else commands[args[0]].run(message, args);
+		if(commands[args[0].toLowerCase()].properties.args.length == 0) commands[args[0].toLowerCase()].run(message);
+		else commands[args[0].toLowerCase()].run(message, args);
 
 	}
 
