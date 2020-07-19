@@ -1,4 +1,4 @@
-import { Message, MessageEmbed, ColorResolvable } from "discord.js";
+/*import { Message, MessageEmbed, ColorResolvable } from "discord.js";
 import config from "../../config.json";
 import request from "request";
 
@@ -26,8 +26,8 @@ const run = (message: Message): number => {
 	});
 	return 1;
 };
-
-/* eslint-disable */
+*/
+/* eslint-disable
 exports.properties = properties;
 exports.run = run;
-/* eslint-enable */
+eslint-enable */
