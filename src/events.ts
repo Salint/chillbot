@@ -1,10 +1,21 @@
-import { Client, Message } from "discord.js";
+import { Client, Message, GuildMember } from "discord.js";
 import config from "../config.json";
 import commands from "./loader";
 
 const readyEvent = (Bot: Client): number => {
 
 	Bot.user.setActivity(`in ${Bot.guilds.cache.array().length} guilds! >help.`, { type: "PLAYING" });
+
+	console.log("Bot has started.");
+
+	return 1;
+};
+
+const guildMemberJoin = (Bot: Client, member: GuildMember): number => {
+
+	if(member.user == Bot.user) {
+		Bot.user.setActivity(`in ${Bot.guilds.cache.array().length} guilds! >help.`, { type: "PLAYING" });
+	}
 
 	return 1;
 };
@@ -26,4 +37,4 @@ const messageEvent = (message: Message): number => {
 };
 
 
-export default { readyEvent, messageEvent }; 
+export default { readyEvent, guildMemberJoin, messageEvent }; 
