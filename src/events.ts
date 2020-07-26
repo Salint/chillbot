@@ -11,15 +11,6 @@ const readyEvent = (Bot: Client): number => {
 	return 1;
 };
 
-const guildMemberJoin = (Bot: Client, member: GuildMember): number => {
-
-	if(member.user == Bot.user) {
-		Bot.user.setActivity(`in ${Bot.guilds.cache.array().length} guilds! >help.`, { type: "PLAYING" });
-	}
-
-	return 1;
-};
-
 const messageEvent = (message: Message): number => {
 
 	const args = message.content.substr(config.prefix.length).split(" ");
@@ -37,4 +28,4 @@ const messageEvent = (message: Message): number => {
 };
 
 
-export default { readyEvent, guildMemberJoin, messageEvent }; 
+export default { readyEvent, messageEvent }; 
