@@ -1,4 +1,4 @@
-import { Client, Message, GuildMember } from "discord.js";
+import { Client, Message } from "discord.js";
 import events from "./events";
 
 const Bot: Client = new Client();

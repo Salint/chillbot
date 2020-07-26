@@ -1,4 +1,4 @@
-import { Client, Message, GuildMember } from "discord.js";
+import { Client, Message } from "discord.js";
 import config from "../config.json";
 import commands from "./loader";
 
