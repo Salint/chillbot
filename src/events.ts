@@ -14,15 +14,15 @@ const readyEvent = (Bot: Client): number => {
 const messageEvent = (message: Message): number => {
 
 	const args = message.content.substr(config.prefix.length).split(" ");
+	const command = args[0].toLowerCase();
 
-	if(!message.content.startsWith(config.prefix) || message.author.bot || message.member == null) return 1;
+	if(!message.content.startsWith(config.prefix)) return 1;
+	if(message.author.bot) return 1;
+	if(message.member == null) return 1;
+	if(!commands[command]) return 1;
 
-	if(commands[args[0].toLowerCase()]) {
-
-		if(commands[args[0].toLowerCase()].properties.args.length == 0) commands[args[0].toLowerCase()].run(message);
-		else commands[args[0].toLowerCase()].run(message, args);
-
-	}
+	if(commands[command].properties.args.length == 0) commands[args[0].toLowerCase()].run(message);
+	else commands[command].run(message, args);
 
 	return 1;
 };
