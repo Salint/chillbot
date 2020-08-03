@@ -8,7 +8,7 @@ const properties = {
 	args: []
 };
 
-const run = (message: Message): number => {
+const run = (message: Message): Promise<void> => {
 
 	const embed: MessageEmbed = new MessageEmbed();
 	embed.setColor(config.color as ColorResolvable);
@@ -24,7 +24,7 @@ const run = (message: Message): number => {
 		embed.setDescription(response.data);
 		message.channel.send(embed);
 	});
-	return 1;
+	return;
 };
 
 /* eslint-disable */

@@ -7,10 +7,10 @@ const properties = {
 	args: []
 };
 
-const run = (message: Message): number => {
+const run = (message: Message): Promise<void> => {
 
 	message.channel.send(config.invite);
-	return 1;
+	return;
 };
 
 /* eslint-disable */

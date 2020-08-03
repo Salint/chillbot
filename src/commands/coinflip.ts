@@ -7,7 +7,7 @@ const properties = {
 	args: []
 };
 
-const run = (message: Message): number => {
+const run = (message: Message): Promise<void> => {
 
 	const chance = Math.random();
 	const embed: MessageEmbed = new MessageEmbed();
@@ -20,7 +20,7 @@ const run = (message: Message): number => {
 	
 	
 	message.channel.send(embed);
-	return 1;
+	return;
 };
 
 /* eslint-disable */
