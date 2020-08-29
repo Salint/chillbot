@@ -33,6 +33,7 @@
 			"always"
 		],
 		"no-unused-vars": "error",
-		"explicit-module-boundary-types": "off"
+		"explicit-module-boundary-types": "off",
+		"linebreak-style": "off"
 	}
 }
