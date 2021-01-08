@@ -10,6 +10,6 @@ Make sure to have latest version of [NodeJS](https://nodejs.org/en/) and [NPM](h
 - Clone the repository using [GitHub Desktop](https://desktop.github.com/), [GitHub CLI](https://cli.github.com/), or GIT Bash.
 - Run `npm i` to install the required dependencies.
 - Run `npm run build` to compile the project.
-- Run `token=<Insert Token Here> npm start` to start the bot.
+- Run `TOKEN=<Insert Token Here> npm start` to start the bot.
 
 Have fun! *with this crappy bot? jeez.*
