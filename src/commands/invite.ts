@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import config from "../../config.json";
+import config from "../config.json";
 
 const properties = {
 	name: "invite",

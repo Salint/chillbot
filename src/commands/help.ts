@@ -1,5 +1,5 @@
 import { Message, MessageEmbed, ColorResolvable } from "discord.js";
-import config from "../../config.json";
+import config from "../config.json";
 import { readdirSync } from "fs";
 import commands from "../loader";
 
