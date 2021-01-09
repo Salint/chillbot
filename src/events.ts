@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import config from "../config.json";
+import config from "./config.json";
 import commands from "./loader";
 import Bot from "./main";
 

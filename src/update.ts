@@ -1,5 +1,5 @@
 import { Client } from "discord.js";
-import config from "../config.json";
+import config from "./config.json";
 
 const update = (Bot: Client): Promise<void> => {
 
